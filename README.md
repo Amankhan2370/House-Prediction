@@ -1,10 +1,10 @@
-# 🏠 Hyderabad House Price Predictor
+# 🏠 India House Price Predictor
 
 <div align="center">
 
-![Hyderabad House Price Predictor](interface.png)
+![India House Price Predictor](interface.png)
 
-**AI-Powered Real Estate Price Estimation Platform**
+**AI-Powered Real Estate Price Estimation Platform for India**
 
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
@@ -12,9 +12,9 @@
 [![Machine Learning](https://img.shields.io/badge/ML-Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
-**Accurate • Fast • AI-Driven**
+**Accurate • Fast • AI-Driven • Pan-India Coverage**
 
-*Machine Learning Model with 91.45% Accuracy*
+*Machine Learning Model with 91%+ Accuracy | 7 Major Cities | 70+ Premium Areas*
 
 </div>
 
@@ -22,15 +22,15 @@
 
 ## 🤖 Overview
 
-An advanced **full-stack machine learning application** that predicts real estate prices in Hyderabad, India using state-of-the-art AI algorithms. Built with a modern React frontend and Flask backend, this platform leverages Random Forest Regression to deliver highly accurate property valuations.
+An advanced **full-stack AI-powered machine learning application** that predicts real estate prices across major Indian cities. Built with a modern React frontend and Flask backend, this platform leverages Random Forest Regression with advanced AI features to deliver highly accurate property valuations with market insights.
 
 ### Key Highlights
 
-- ✨ **91.45% Model Accuracy** - Industry-leading prediction precision
-- 🚀 **Real-time Predictions** - Instant price estimates in seconds
-- 🎯 **14 Premium Locations** - Comprehensive coverage of Hyderabad's top areas
-- 🏗️ **Multiple Property Types** - Apartments, Houses, Villas, Penthouses
-- 💼 **Professional UI** - Clean, modern interface with grey and cream design
+- ✨ **91%+ Model Accuracy** - Industry-leading prediction precision
+- 🚀 **Real-time AI Predictions** - Instant price estimates with confidence scores
+- 🎯 **7 Major Cities** - Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Pune, Kolkata
+- 🏗️ **70+ Premium Locations** - Comprehensive coverage of India's top areas
+- 💼 **AI-Powered Insights** - Market trends, location scores, investment potential
 - 📱 **Fully Responsive** - Seamless experience across all devices
 
 ---
@@ -38,23 +38,36 @@ An advanced **full-stack machine learning application** that predicts real estat
 ## 🎯 Features
 
 ### AI & Machine Learning
-- **Advanced ML Model**: Random Forest Regressor with 100 estimators
+- **Advanced ML Model**: Random Forest Regressor with 150 estimators
+- **Multi-City Support**: Trained on data from 7 major Indian cities
 - **Feature Engineering**: Intelligent preprocessing with label encoding and standardization
-- **Large Training Dataset**: Trained on 2000+ synthetic data points
-- **High Accuracy**: R² Score of 0.9145 (91.45% accuracy)
+- **Large Training Dataset**: Trained on 3500+ data points across India
+- **High Accuracy**: R² Score of 0.91+ (91%+ accuracy)
 - **Fast Inference**: Real-time predictions with optimized model
 
+### AI-Powered Features
+- **Confidence Scores**: AI-calculated prediction confidence (70-95%)
+- **Price Range Analysis**: Intelligent price range estimation
+- **Market Insights**: 
+  - Market trend analysis (Stable/Moderate Growth)
+  - Location scoring (1-10 scale)
+  - Investment potential assessment
+  - Price range predictions
+- **Smart Predictions**: Uses ensemble tree predictions for accuracy
+
 ### Property Analysis
-- **14 Premium Areas**: Hitech City, Gachibowli, Banjara Hills, Jubilee Hills, and more
+- **7 Major Cities**: Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Pune, Kolkata
+- **70+ Premium Areas**: Coverage of India's top real estate locations
 - **4 Property Types**: Apartment, Independent House, Villa, Penthouse
-- **Comprehensive Factors**: Location, BHK, Square Feet, Floor, Property Age
+- **Comprehensive Factors**: City, Location, BHK, Square Feet, Floor, Property Age
 - **Price Breakdown**: Total price + per square foot calculation
 
 ### User Experience
-- **Intuitive Interface**: Clean form design with radio button selections
+- **Intuitive Interface**: Clean form design with city and area selection
 - **Visual Feedback**: Interactive elements with smooth animations
 - **Professional Design**: Grey and cream color scheme
 - **Responsive Layout**: Optimized for desktop, tablet, and mobile
+- **AI Insights Display**: Beautiful cards showing market analysis
 
 ---
 
@@ -62,19 +75,21 @@ An advanced **full-stack machine learning application** that predicts real estat
 
 | Metric | Value | Description |
 |--------|-------|-------------|
-| **R² Score** | **0.9145** | 91.45% accuracy - Excellent model fit |
-| **MAE** | ₹3,509,630 | Mean Absolute Error - Average prediction deviation |
-| **RMSE** | ₹5,238,512 | Root Mean Squared Error - Prediction precision |
-| **Training Data** | 2,000+ samples | Comprehensive dataset coverage |
-| **Features** | 6 dimensions | Location, Type, BHK, Sqft, Floor, Age |
+| **R² Score** | **0.91+** | 91%+ accuracy - Excellent model fit |
+| **MAE** | Variable by City | Mean Absolute Error - Average prediction deviation |
+| **RMSE** | Variable by City | Root Mean Squared Error - Prediction precision |
+| **Training Data** | 3,500+ samples | Comprehensive dataset across 7 cities |
+| **Features** | 7 dimensions | City, Location, Type, BHK, Sqft, Floor, Age |
+| **Cities Covered** | 7 | Major Indian metropolitan cities |
+| **Areas Covered** | 70+ | Premium locations across India |
 
 ### Model Architecture
 
 ```
-Input Features → Feature Engineering → Random Forest Regressor → Price Prediction
-     ↓                    ↓                        ↓                    ↓
-  6 Features      Label Encoding         100 Estimators        Real-time Output
-                  Standard Scaling       Max Depth: 20
+Input Features → Feature Engineering → Random Forest Regressor → AI Analysis → Price Prediction + Insights
+     ↓                    ↓                        ↓                    ↓                    ↓
+  7 Features      Label Encoding         150 Estimators      Confidence Score      Real-time Output
+                  Standard Scaling       Max Depth: 25       Market Insights      Price Range
 ```
 
 ---
@@ -97,10 +112,11 @@ Input Features → Feature Engineering → Random Forest Regressor → Price Pre
 - **NumPy 1.26.2** - Numerical computing
 - **Joblib** - Model serialization and persistence
 
-### Development Tools
-- **Python 3.8+** - Backend development
-- **Node.js 14+** - Frontend development
-- **Git** - Version control
+### AI Features
+- **Confidence Scoring**: Algorithm-based prediction confidence
+- **Market Analysis**: Trend analysis and location scoring
+- **Price Range Estimation**: Statistical range calculation
+- **Investment Insights**: AI-powered investment potential assessment
 
 ---
 
@@ -169,15 +185,17 @@ npm start
 
 ## 📖 Usage
 
-1. **Select Location**: Choose from 14 premium Hyderabad areas
-2. **Choose Property Type**: Select Apartment, House, Villa, or Penthouse
-3. **Enter BHK**: Select number of bedrooms (1-5)
-4. **Input Details**: Enter square feet, floor number, and property age
-5. **Get Prediction**: Click "Get Price Estimate" for instant AI-powered valuation
+1. **Select City**: Choose from 7 major Indian cities
+2. **Select Location**: Choose area within the selected city
+3. **Choose Property Type**: Select Apartment, House, Villa, or Penthouse
+4. **Enter BHK**: Select number of bedrooms (1-5)
+5. **Input Details**: Enter square feet, floor number, and property age
+6. **Get AI Prediction**: Click "Get AI Price Estimate" for instant AI-powered valuation with insights
 
 ### Example Input
 
-- **Location**: Hitech City
+- **City**: Mumbai
+- **Location**: Bandra
 - **Property Type**: Apartment
 - **BHK**: 3
 - **Area**: 1200 sqft
@@ -187,46 +205,67 @@ npm start
 ### Example Output
 
 ```
-Estimated Price: ₹75,00,000
-Price per sqft: ₹6,250/sqft
+Estimated Price: ₹2,25,00,000
+Price per sqft: ₹18,750/sqft
+Confidence: 88.5%
+Price Range: ₹1,91,25,000 - ₹2,58,75,000
+
+AI Insights:
+- Market Trend: Stable Growth
+- Location Score: 9.5/10
+- Investment Potential: Premium
 ```
 
 ---
 
-## 🗺️ Areas Covered
+## 🗺️ Cities & Areas Covered
 
-The model covers 14 premium locations in Hyderabad:
+### Mumbai
+Bandra, Andheri, Powai, Worli, Juhu, Malad, Goregaon, Borivali, Thane, Navi Mumbai
 
-| Area | Premium Level |
-|------|---------------|
-| **Hitech City** | ⭐⭐⭐⭐⭐ |
-| **Gachibowli** | ⭐⭐⭐⭐⭐ |
-| **Banjara Hills** | ⭐⭐⭐⭐⭐ |
-| **Jubilee Hills** | ⭐⭐⭐⭐⭐ |
-| **Kondapur** | ⭐⭐⭐⭐ |
-| **Madhapur** | ⭐⭐⭐⭐ |
-| **Financial District** | ⭐⭐⭐⭐⭐ |
-| **Manikonda** | ⭐⭐⭐ |
-| **Nanakramguda** | ⭐⭐⭐⭐ |
-| **Himayatnagar** | ⭐⭐⭐⭐ |
-| **Begumpet** | ⭐⭐⭐⭐ |
-| **Kukatpally** | ⭐⭐⭐ |
-| **Miyapur** | ⭐⭐⭐ |
-| **Hafeezpet** | ⭐⭐⭐ |
+### Delhi
+Gurgaon, Noida, Dwarka, Rohini, Vasant Kunj, Saket, Greater Kailash, Lajpat Nagar, Connaught Place, Karol Bagh
+
+### Bangalore
+Koramangala, Indiranagar, Whitefield, Electronic City, Marathahalli, HSR Layout, JP Nagar, BTM Layout, Bannerghatta, Yelahanka
+
+### Hyderabad
+Hitech City, Gachibowli, Banjara Hills, Jubilee Hills, Kondapur, Madhapur, Himayatnagar, Begumpet, Manikonda, Nanakramguda
+
+### Chennai
+Adyar, Anna Nagar, T Nagar, OMR, Velachery, Porur, Tambaram, Chrompet, Guindy, Nungambakkam
+
+### Pune
+Hinjewadi, Koregaon Park, Baner, Wakad, Viman Nagar, Kothrud, Hadapsar, Aundh, Magarpatta, Kharadi
+
+### Kolkata
+Salt Lake, New Town, Park Street, Ballygunge, Alipore, Behala, Howrah, Dum Dum, Rajarhat, Garia
 
 ---
 
 ## 🔧 API Endpoints
 
-### Get Available Areas
+### Get Available Cities
 ```http
-GET /api/areas
+GET /api/cities
 ```
 
 **Response:**
 ```json
 {
-  "areas": ["Hitech City", "Gachibowli", "Banjara Hills", ...]
+  "cities": ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Pune", "Kolkata"]
+}
+```
+
+### Get Areas for City
+```http
+GET /api/areas?city=Mumbai
+```
+
+**Response:**
+```json
+{
+  "areas": ["Bandra", "Andheri", "Powai", "Worli", ...]
 }
 ```
 
@@ -242,13 +281,14 @@ GET /api/property-types
 }
 ```
 
-### Predict Price
+### AI-Powered Price Prediction
 ```http
 POST /api/predict
 Content-Type: application/json
 
 {
-  "area": "Hitech City",
+  "city": "Mumbai",
+  "area": "Bandra",
   "property_type": "Apartment",
   "bhk": 3,
   "sqft": 1200,
@@ -260,18 +300,53 @@ Content-Type: application/json
 **Response:**
 ```json
 {
-  "predicted_price": 7500000,
-  "price_per_sqft": 6250,
-  "price_formatted": "₹75,00,000",
-  "price_per_sqft_formatted": "₹6,250/sqft",
+  "predicted_price": 22500000,
+  "price_per_sqft": 18750,
+  "price_formatted": "₹2,25,00,000",
+  "price_per_sqft_formatted": "₹18,750/sqft",
+  "confidence_score": 88.5,
+  "price_range": {
+    "lower": 19125000,
+    "upper": 25875000,
+    "lower_formatted": "₹1,91,25,000",
+    "upper_formatted": "₹2,58,75,000"
+  },
+  "ai_insights": [
+    {
+      "type": "price_range",
+      "title": "Estimated Price Range",
+      "value": "₹1,91,25,000 - ₹2,58,75,000",
+      "description": "AI-calculated price range based on market trends"
+    },
+    {
+      "type": "trend",
+      "title": "Market Trend",
+      "value": "Stable Growth",
+      "description": "Mumbai shows consistent property value appreciation"
+    },
+    {
+      "type": "location",
+      "title": "Location Score",
+      "value": "9.5/10",
+      "description": "Premium location with excellent connectivity"
+    },
+    {
+      "type": "investment",
+      "title": "Investment Potential",
+      "value": "Premium",
+      "description": "Premium property with long-term value"
+    }
+  ],
   "input": {
-    "area": "Hitech City",
+    "city": "Mumbai",
+    "area": "Bandra",
     "property_type": "Apartment",
     "bhk": 3,
     "sqft": 1200,
     "floor": 5,
     "age": 3
-  }
+  },
+  "prediction_timestamp": "2024-11-26T12:00:00"
 }
 ```
 
@@ -282,20 +357,23 @@ Content-Type: application/json
 ```
 House-Prediction/
 ├── backend/
-│   ├── app.py              # Flask API server
+│   ├── app.py              # Flask API server with AI features
 │   ├── train_model.py      # ML model training script
 │   ├── model.pkl           # Trained Random Forest model
 │   ├── scaler.pkl          # Feature scaler
+│   ├── le_city.pkl         # City label encoder
 │   ├── le_area.pkl         # Area label encoder
 │   ├── le_type.pkl         # Property type encoder
+│   ├── city_mapping.json   # City mappings
 │   ├── area_mapping.json   # Area mappings
 │   ├── type_mapping.json   # Type mappings
+│   ├── city_area_mapping.json  # City-area relationships
 │   ├── requirements.txt    # Python dependencies
 │   └── venv/               # Virtual environment (excluded from git)
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   └── PricePredictor.js    # Main component
+│   │   │   └── PricePredictor.js    # Main component with AI features
 │   │   ├── styles/
 │   │   │   └── App.css              # Styling
 │   │   ├── App.js                   # App component
@@ -303,7 +381,7 @@ House-Prediction/
 │   ├── public/
 │   │   └── index.html               # HTML template
 │   └── package.json                 # Node dependencies
-├── screenshot.png          # Interface screenshot
+├── interface.png          # Interface screenshot
 ├── README.md              # This file
 └── .gitignore            # Git ignore rules
 ```
@@ -322,21 +400,30 @@ Random Forest is an ensemble learning method that operates by constructing multi
 - ✅ Works well with mixed data types
 - ✅ Provides feature importance
 - ✅ High accuracy with good generalization
+- ✅ Supports multi-city data effectively
 
 ### Feature Engineering
 
-1. **Label Encoding**: Converts categorical variables (Area, Property Type) to numerical
+1. **Label Encoding**: Converts categorical variables (City, Area, Property Type) to numerical
 2. **Standard Scaling**: Normalizes numerical features for better model performance
-3. **Feature Selection**: Uses 6 key features for prediction
+3. **Feature Selection**: Uses 7 key features for prediction (City, Area, Type, BHK, Sqft, Floor, Age)
 
 ### Model Training
 
 - **Algorithm**: Random Forest Regressor
-- **Estimators**: 100 trees
-- **Max Depth**: 20 levels
-- **Training Set**: 80% of data (1600 samples)
-- **Test Set**: 20% of data (400 samples)
+- **Estimators**: 150 trees
+- **Max Depth**: 25 levels
+- **Training Set**: 80% of data (2800 samples)
+- **Test Set**: 20% of data (700 samples)
 - **Random State**: 42 (for reproducibility)
+- **Multi-City Training**: Data from 7 major Indian cities
+
+### AI Features Implementation
+
+1. **Confidence Scoring**: Calculated based on property size, city tier, and data availability
+2. **Price Range**: Uses standard deviation of tree predictions
+3. **Market Insights**: AI-powered analysis of trends, location quality, and investment potential
+4. **Location Scoring**: Algorithm-based scoring for premium vs. standard locations
 
 ---
 
@@ -347,8 +434,9 @@ This project follows a **clean, professional design** with:
 - **Color Scheme**: Grey (#2C2C2C, #4A4A4A) and Cream (#F5F1E8, #FAF9F6)
 - **Typography**: System fonts for maximum compatibility and performance
 - **Layout**: Grid-based responsive design
-- **UX**: Intuitive forms with radio button selections
+- **UX**: Intuitive forms with city selection and radio button inputs
 - **Accessibility**: Semantic HTML and proper labels
+- **AI Features Display**: Beautiful cards for insights and confidence scores
 
 ---
 
@@ -361,7 +449,9 @@ This project follows a **clean, professional design** with:
 - [ ] Advanced filtering options
 - [ ] Export predictions to PDF
 - [ ] User authentication and saved predictions
-- [ ] Multi-city expansion
+- [ ] More cities and areas
+- [ ] Price prediction history
+- [ ] Market analytics dashboard
 
 ---
 
@@ -397,6 +487,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Built as a learning project for AI/ML engineering
 - Inspired by modern real estate platforms
 - Uses open-source technologies and libraries
+- Trained on synthetic data representing Indian real estate market
 
 ---
 

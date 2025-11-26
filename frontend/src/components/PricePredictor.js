@@ -6,6 +6,7 @@ const API_URL = 'http://localhost:5001';
 
 function PricePredictor() {
   const [formData, setFormData] = useState({
+    city: '',
     area: '',
     property_type: '',
     bhk: '',
@@ -14,6 +15,7 @@ function PricePredictor() {
     age: ''
   });
   
+  const [cities, setCities] = useState([]);
   const [areas, setAreas] = useState([]);
   const [propertyTypes, setPropertyTypes] = useState([]);
   const [prediction, setPrediction] = useState(null);
@@ -22,16 +24,29 @@ function PricePredictor() {
 
   useEffect(() => {
     Promise.all([
-      axios.get(`${API_URL}/api/areas`),
+      axios.get(`${API_URL}/api/cities`),
       axios.get(`${API_URL}/api/property-types`)
-    ]).then(([areasRes, typesRes]) => {
-      setAreas(areasRes.data.areas);
+    ]).then(([citiesRes, typesRes]) => {
+      setCities(citiesRes.data.cities);
       setPropertyTypes(typesRes.data.types);
     }).catch(err => {
       setError('Failed to load data. Make sure backend is running.');
       console.error(err);
     });
   }, []);
+
+  useEffect(() => {
+    if (formData.city) {
+      axios.get(`${API_URL}/api/areas?city=${formData.city}`)
+        .then(res => {
+          setAreas(res.data.areas);
+          setFormData(prev => ({ ...prev, area: '' }));
+        })
+        .catch(err => {
+          console.error('Failed to load areas:', err);
+        });
+    }
+  }, [formData.city]);
 
   const handleChange = (e) => {
     setFormData({
@@ -53,6 +68,7 @@ function PricePredictor() {
 
   const handleClear = () => {
     setFormData({
+      city: '',
       area: '',
       property_type: '',
       bhk: '',
@@ -62,6 +78,7 @@ function PricePredictor() {
     });
     setError('');
     setPrediction(null);
+    setAreas([]);
   };
 
   const handleSubmit = async (e) => {
@@ -97,31 +114,41 @@ function PricePredictor() {
     return icons[type] || '🏠';
   };
 
+  const getInsightIcon = (type) => {
+    const icons = {
+      'price_range': '💰',
+      'trend': '📈',
+      'location': '📍',
+      'investment': '💎'
+    };
+    return icons[type] || '📊';
+  };
+
   return (
     <div className="container">
       {/* Header */}
       <div className="header">
         <div className="header-content">
-          <h1>Hyderabad House Price Predictor</h1>
+          <h1>India House Price Predictor</h1>
           <p className="header-subtitle">
-            Get instant, AI-powered property valuations for Hyderabad's premium locations
+            AI-Powered Real Estate Price Estimation for Major Indian Cities
           </p>
           <div className="header-stats">
             <div className="stat-item">
-              <div className="stat-value">91.45%</div>
-              <div className="stat-label">Accuracy</div>
+              <div className="stat-value">7</div>
+              <div className="stat-label">Major Cities</div>
             </div>
             <div className="stat-item">
-              <div className="stat-value">14</div>
+              <div className="stat-value">70+</div>
               <div className="stat-label">Premium Areas</div>
             </div>
             <div className="stat-item">
-              <div className="stat-value">2K+</div>
-              <div className="stat-label">Data Points</div>
+              <div className="stat-value">91%</div>
+              <div className="stat-label">AI Accuracy</div>
             </div>
             <div className="stat-item">
-              <div className="stat-value">4</div>
-              <div className="stat-label">Property Types</div>
+              <div className="stat-value">AI</div>
+              <div className="stat-label">Powered</div>
             </div>
           </div>
         </div>
@@ -133,10 +160,27 @@ function PricePredictor() {
         <div className="form-container">
           <div className="form-header">
             <h2 className="form-title">Property Details</h2>
-            <p className="form-subtitle">Enter your property information for an instant price estimate</p>
+            <p className="form-subtitle">Enter your property information for AI-powered price estimation</p>
           </div>
           
           <form onSubmit={handleSubmit} className="prediction-form">
+            {/* City Selection */}
+            <div className="form-group">
+              <label className="form-label">City</label>
+              <select
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                required
+                className="form-select"
+              >
+                <option value="">Select City</option>
+                {cities.map(city => (
+                  <option key={city} value={city}>{city}</option>
+                ))}
+              </select>
+            </div>
+
             {/* Location */}
             <div className="form-group">
               <label className="form-label">Location</label>
@@ -146,8 +190,9 @@ function PricePredictor() {
                 onChange={handleChange}
                 required
                 className="form-select"
+                disabled={!formData.city}
               >
-                <option value="">Select Area</option>
+                <option value="">{formData.city ? 'Select Area' : 'Select City First'}</option>
                 {areas.map(area => (
                   <option key={area} value={area}>{area}</option>
                 ))}
@@ -266,7 +311,7 @@ function PricePredictor() {
                 className="submit-btn submit-btn-main" 
                 disabled={loading}
               >
-                {loading ? 'Predicting...' : 'Get Price Estimate'}
+                {loading ? 'AI Analyzing...' : '🤖 Get AI Price Estimate'}
               </button>
             </div>
           </form>
@@ -286,19 +331,55 @@ function PricePredictor() {
           {prediction && (
             <div className="prediction-result">
               <div className="price-display">
-                <div className="price-label">Estimated Property Value</div>
+                <div className="price-label">AI Estimated Property Value</div>
                 <div className="price-amount">{prediction.price_formatted}</div>
                 <div className="price-per-sqft">
                   <span>📊</span>
                   {prediction.price_per_sqft_formatted}
                 </div>
+                <div className="confidence-badge">
+                  <span>🎯</span>
+                  {prediction.confidence_score}% Confidence
+                </div>
               </div>
+
+              {/* Price Range */}
+              <div className="price-range-section">
+                <div className="range-label">AI Price Range</div>
+                <div className="range-values">
+                  {prediction.price_range.lower_formatted} - {prediction.price_range.upper_formatted}
+                </div>
+              </div>
+              
+              {/* AI Insights */}
+              {prediction.ai_insights && prediction.ai_insights.length > 0 && (
+                <div className="ai-insights-section">
+                  <div className="insights-title">🤖 AI-Powered Insights</div>
+                  <div className="insights-grid">
+                    {prediction.ai_insights.map((insight, index) => (
+                      <div key={index} className="insight-card">
+                        <div className="insight-header">
+                          <span className="insight-icon">{getInsightIcon(insight.type)}</span>
+                          <span className="insight-title">{insight.title}</span>
+                        </div>
+                        <div className="insight-value">{insight.value}</div>
+                        <div className="insight-description">{insight.description}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               
               <div className="prediction-details">
                 <div className="details-title">Property Information</div>
                 <div className="detail-grid">
                   <div className="detail-card">
-                    <div className="detail-label">Location</div>
+                    <div className="detail-label">🏙️ City</div>
+                    <div className="detail-value">{prediction.input.city}</div>
+                  </div>
+                  
+                  <div className="detail-card">
+                    <div className="detail-label">📍 Location</div>
                     <div className="detail-value">{prediction.input.area}</div>
                   </div>
                   
@@ -336,9 +417,9 @@ function PricePredictor() {
           {!prediction && !error && !loading && (
             <div className="placeholder">
               <div className="placeholder-icon">🏡</div>
-              <div className="placeholder-title">Get Instant Price Estimate</div>
+              <div className="placeholder-title">Get AI-Powered Price Estimate</div>
               <div className="placeholder-text">
-                Fill in your property details to receive an AI-powered price prediction
+                Fill in your property details to receive an AI-powered price prediction with market insights
               </div>
             </div>
           )}
@@ -346,8 +427,8 @@ function PricePredictor() {
           {loading && (
             <div className="loading-container">
               <div className="loading-spinner"></div>
-              <div className="loading-title">Analyzing Property Data</div>
-              <div className="loading-text">Our AI model is calculating the best estimate for you...</div>
+              <div className="loading-title">AI Analyzing Property Data</div>
+              <div className="loading-text">Our AI model is calculating price, confidence score, and market insights...</div>
             </div>
           )}
         </div>
@@ -361,8 +442,8 @@ function PricePredictor() {
             <p>Advanced Machine Learning</p>
           </div>
           <div className="footer-section">
-            <h4>Hyderabad Focused</h4>
-            <p>14 Premium Areas</p>
+            <h4>India Coverage</h4>
+            <p>7 Major Cities</p>
           </div>
           <div className="footer-section">
             <h4>Instant Results</h4>
