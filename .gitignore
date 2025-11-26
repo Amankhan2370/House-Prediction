@@ -11,12 +11,15 @@ backend/.venv
 *.pickle
 !backend/model.pkl
 !backend/scaler.pkl
+!backend/le_city.pkl
 !backend/le_area.pkl
 !backend/le_type.pkl
 *.json
 !package.json
 !backend/area_mapping.json
 !backend/type_mapping.json
+!backend/city_mapping.json
+!backend/city_area_mapping.json
 
 # Environment variables
 .env
@@ -62,5 +65,5 @@ frontend.log
 *.temp
 /tmp/
 
-# Screenshot script (keep screenshot.png)
+# Screenshot script (utility, not needed in repo)
 take-screenshot.js
