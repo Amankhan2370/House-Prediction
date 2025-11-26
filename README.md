@@ -2,6 +2,8 @@
 
 AI-powered real estate price estimation platform for Hyderabad properties with 91.45% accuracy.
 
+![Hyderabad House Price Predictor](screenshot.png)
+
 ## Features
 
 - **AI-Powered Predictions**: Machine Learning model with 91.45% accuracy
@@ -27,6 +29,17 @@ AI-powered real estate price estimation platform for Hyderabad properties with 9
 - Random Forest Regressor
 - Feature Engineering (Label Encoding, Standard Scaling)
 - 2000+ data points
+
+## Screenshots
+
+### Main Interface
+![Main Interface](screenshot.png)
+
+### Property Details Form
+The form includes location selection, property type (with radio buttons), BHK selection, area, floor, and property age inputs.
+
+### Results Display
+Real-time price predictions with detailed property information in a clean card-based layout.
 
 ## Model Performance
 
