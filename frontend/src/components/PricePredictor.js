@@ -306,7 +306,6 @@ function PricePredictor() {
         <div className="result-container">
           {error && (
             <div className="error-message">
-              <span className="error-icon">⚠️</span>
               <div>
                 <strong>Error:</strong> {error}
               </div>

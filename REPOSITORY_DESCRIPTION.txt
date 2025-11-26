@@ -1,2 +1,0 @@
-AI-powered house price prediction platform for India with 91%+ accuracy | React + Flask + Machine Learning | Multi-city support with 70+ premium areas | Advanced AI features including confidence scores, market insights, and investment analysis
-
