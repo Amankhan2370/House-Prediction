@@ -61,3 +61,6 @@ frontend.log
 *.tmp
 *.temp
 /tmp/
+
+# Screenshot script (keep screenshot.png)
+take-screenshot.js
