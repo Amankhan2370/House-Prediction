@@ -1,0 +1,6 @@
+{
+  "Apartment": 0,
+  "Independent House": 1,
+  "Penthouse": 2,
+  "Villa": 3
+}

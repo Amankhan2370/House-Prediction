@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/venv/
+backend/env/
+backend/.venv
+*.pkl
+*.pickle
+!backend/model.pkl
+!backend/scaler.pkl
+!backend/le_area.pkl
+!backend/le_type.pkl
+*.json
+!package.json
+!backend/area_mapping.json
+!backend/type_mapping.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage/
+frontend/.npm
+frontend/.eslintcache
+frontend/build/
+frontend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+backend.log
+frontend.log
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
