@@ -370,7 +370,7 @@ function PricePredictor() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>Built for Hyderabad Real Estate • Powered by Machine Learning</p>
+          <p>Powered by Aman Khan</p>
         </div>
       </div>
     </div>
