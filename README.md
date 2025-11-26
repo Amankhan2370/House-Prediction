@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Hyderabad House Price Predictor](screenshot.png)
+![Hyderabad House Price Predictor](interface.png)
 
 **AI-Powered Real Estate Price Estimation Platform**
 
