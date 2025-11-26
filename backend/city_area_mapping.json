@@ -1,0 +1,86 @@
+{
+  "Mumbai": [
+    "Bandra",
+    "Andheri",
+    "Powai",
+    "Worli",
+    "Juhu",
+    "Malad",
+    "Goregaon",
+    "Borivali",
+    "Thane",
+    "Navi Mumbai"
+  ],
+  "Delhi": [
+    "Gurgaon",
+    "Noida",
+    "Dwarka",
+    "Rohini",
+    "Vasant Kunj",
+    "Saket",
+    "Greater Kailash",
+    "Lajpat Nagar",
+    "Connaught Place",
+    "Karol Bagh"
+  ],
+  "Bangalore": [
+    "Koramangala",
+    "Indiranagar",
+    "Whitefield",
+    "Electronic City",
+    "Marathahalli",
+    "HSR Layout",
+    "JP Nagar",
+    "BTM Layout",
+    "Bannerghatta",
+    "Yelahanka"
+  ],
+  "Hyderabad": [
+    "Hitech City",
+    "Gachibowli",
+    "Banjara Hills",
+    "Jubilee Hills",
+    "Kondapur",
+    "Madhapur",
+    "Himayatnagar",
+    "Begumpet",
+    "Manikonda",
+    "Nanakramguda"
+  ],
+  "Chennai": [
+    "Adyar",
+    "Anna Nagar",
+    "T Nagar",
+    "OMR",
+    "Velachery",
+    "Porur",
+    "Tambaram",
+    "Chrompet",
+    "Guindy",
+    "Nungambakkam"
+  ],
+  "Pune": [
+    "Hinjewadi",
+    "Koregaon Park",
+    "Baner",
+    "Wakad",
+    "Viman Nagar",
+    "Kothrud",
+    "Hadapsar",
+    "Aundh",
+    "Magarpatta",
+    "Kharadi"
+  ],
+  "Kolkata": [
+    "Salt Lake",
+    "New Town",
+    "Park Street",
+    "Ballygunge",
+    "Alipore",
+    "Behala",
+    "Howrah",
+    "Dum Dum",
+    "Rajarhat",
+    "Garia"
+  ]
+}

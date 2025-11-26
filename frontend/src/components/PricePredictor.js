@@ -104,24 +104,9 @@ function PricePredictor() {
     }
   };
 
-  const getPropertyTypeIcon = (type) => {
-    const icons = {
-      'Apartment': '🏢',
-      'Independent House': '🏠',
-      'Villa': '🏡',
-      'Penthouse': '🏰'
-    };
-    return icons[type] || '🏠';
-  };
-
   const getInsightIcon = (type) => {
-    const icons = {
-      'price_range': '💰',
-      'trend': '📈',
-      'location': '📍',
-      'investment': '💎'
-    };
-    return icons[type] || '📊';
+    // Return empty string for professional look
+    return '';
   };
 
   return (
@@ -147,8 +132,8 @@ function PricePredictor() {
               <div className="stat-label">AI Accuracy</div>
             </div>
             <div className="stat-item">
-              <div className="stat-value">AI</div>
-              <div className="stat-label">Powered</div>
+              <div className="stat-value">3.5K+</div>
+              <div className="stat-label">Data Points</div>
             </div>
           </div>
         </div>
@@ -216,7 +201,7 @@ function PricePredictor() {
                       required
                     />
                     <label htmlFor={`type-${type}`} className="radio-label">
-                      {getPropertyTypeIcon(type)} {type}
+                      {type}
                     </label>
                   </div>
                 ))}
@@ -311,7 +296,7 @@ function PricePredictor() {
                 className="submit-btn submit-btn-main" 
                 disabled={loading}
               >
-                {loading ? 'AI Analyzing...' : '🤖 Get AI Price Estimate'}
+                {loading ? 'AI Analyzing...' : 'Get AI Price Estimate'}
               </button>
             </div>
           </form>
@@ -334,11 +319,9 @@ function PricePredictor() {
                 <div className="price-label">AI Estimated Property Value</div>
                 <div className="price-amount">{prediction.price_formatted}</div>
                 <div className="price-per-sqft">
-                  <span>📊</span>
                   {prediction.price_per_sqft_formatted}
                 </div>
                 <div className="confidence-badge">
-                  <span>🎯</span>
                   {prediction.confidence_score}% Confidence
                 </div>
               </div>
@@ -354,12 +337,11 @@ function PricePredictor() {
               {/* AI Insights */}
               {prediction.ai_insights && prediction.ai_insights.length > 0 && (
                 <div className="ai-insights-section">
-                  <div className="insights-title">🤖 AI-Powered Insights</div>
+                  <div className="insights-title">AI-Powered Insights</div>
                   <div className="insights-grid">
                     {prediction.ai_insights.map((insight, index) => (
                       <div key={index} className="insight-card">
                         <div className="insight-header">
-                          <span className="insight-icon">{getInsightIcon(insight.type)}</span>
                           <span className="insight-title">{insight.title}</span>
                         </div>
                         <div className="insight-value">{insight.value}</div>
@@ -374,19 +356,19 @@ function PricePredictor() {
                 <div className="details-title">Property Information</div>
                 <div className="detail-grid">
                   <div className="detail-card">
-                    <div className="detail-label">🏙️ City</div>
+                    <div className="detail-label">City</div>
                     <div className="detail-value">{prediction.input.city}</div>
                   </div>
                   
                   <div className="detail-card">
-                    <div className="detail-label">📍 Location</div>
+                    <div className="detail-label">Location</div>
                     <div className="detail-value">{prediction.input.area}</div>
                   </div>
                   
                   <div className="detail-card">
                     <div className="detail-label">Property Type</div>
                     <div className="detail-value">
-                      {getPropertyTypeIcon(prediction.input.property_type)} {prediction.input.property_type}
+                      {prediction.input.property_type}
                     </div>
                   </div>
                   
@@ -416,7 +398,7 @@ function PricePredictor() {
 
           {!prediction && !error && !loading && (
             <div className="placeholder">
-              <div className="placeholder-icon">🏡</div>
+              <div className="placeholder-icon"></div>
               <div className="placeholder-title">Get AI-Powered Price Estimate</div>
               <div className="placeholder-text">
                 Fill in your property details to receive an AI-powered price prediction with market insights
